@@ -23,10 +23,6 @@ functions:
       - http:
           path: hello-query
           method: get
-          request:
-            parameters:
-              querystrings:
-                name: false
   hello-inspect:
     cljs: lambda-helper.core/hello-inspect
     events:
@@ -39,11 +35,6 @@ functions:
       - http:
           path: hello-inspect-query
           method: get
-          request:
-            parameters:
-              querystrings:
-                name: false
-                id: false
   hello-inspect-post:
     cljs: lambda-helper.core/hello-inspect-post
     events:
