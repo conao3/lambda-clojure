@@ -27,6 +27,18 @@ functions:
             parameters:
               querystrings:
                 name: false
+  hello-inspect:
+    cljs: lambda-helper.core/hello-inspect
+    events:
+      - http:
+          path: hello-inspect
+          method: get
+  hello-inspect-post:
+    cljs: lambda-helper.core/hello-inspect-post
+    events:
+      - http:
+          path: hello-inspect-post
+          method: post
 
 plugins:
   - serverless-cljs-plugin
