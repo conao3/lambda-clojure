@@ -17,6 +17,16 @@ functions:
       - http:
           path: hello
           method: get
+  hello-query:
+    cljs: lambda-helper.core/hello-query
+    events:
+      - http:
+          path: hello-query
+          method: get
+          request:
+            parameters:
+              querystrings:
+                name: false
 
 plugins:
   - serverless-cljs-plugin
