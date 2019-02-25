@@ -45,6 +45,12 @@
      :headers {:content-type "application/json"}
      :body (JSON/stringify (clj->js event))}))
 
+(defgateway hello-inspect-query [event ctx]
+  (let [name (get-in event [:query :name])]
+    {:status 200
+     :headers {:content-type "application/json"}
+     :body (JSON/stringify (clj->js event))}))
+
 (defgateway hello-inspect-post [event ctx]
   (let [name (get-in event [:query :name])]
     {:status 200
