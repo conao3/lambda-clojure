@@ -11,6 +11,12 @@ functions:
       - http:
           path: echo
           method: post
+  hello:
+    cljs: lambda-helper.core/hello
+    events:
+      - http:
+          path: hello
+          method: get
 
 plugins:
   - serverless-cljs-plugin

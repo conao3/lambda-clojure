@@ -5,3 +5,8 @@
   {:status  200
    :headers {:content-type (-> event :headers :content-type)}
    :body    (event :body)})
+
+(defgateway hello [event ctx]
+  {:status 200
+   :headers {:content-type (-> event :headers :content-type)}
+   :body "hello world"})
