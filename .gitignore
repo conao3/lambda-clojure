@@ -1,2 +1,13 @@
 # conao3's global .gitignore at
 # http://dotfiles.conao3.com/gitignore
+
+# clojure files
+pom.xml
+*jar
+/lib/
+/classes/
+/out/
+/target/
+.lein*
+/node_modules
+.serverless/

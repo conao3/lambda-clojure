@@ -1,0 +1,16 @@
+service: lambda-helper
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+
+functions:
+  echo:
+    cljs: lambda-helper.core/echo
+    events:
+      - http:
+          path: echo
+          method: post
+
+plugins:
+  - serverless-cljs-plugin
