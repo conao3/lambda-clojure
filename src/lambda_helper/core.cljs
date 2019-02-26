@@ -23,8 +23,6 @@
             ;; [clj-http.client :as client]
             ))
 
-(require '[clj-http.client :as client])
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
 ;;  hello functions
