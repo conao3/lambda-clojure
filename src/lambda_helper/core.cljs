@@ -16,7 +16,10 @@
 ;; along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 (ns lambda-helper.core
-  (:require [cljs-lambda.macros :refer-macros [defgateway]]))
+  (:require [cljs-lambda.macros :refer-macros [defgateway]]
+            [clj-http.client :as client]))
+
+(require '[clj-http.client :as client])
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
@@ -56,6 +59,12 @@
     {:status 200
      :headers {:content-type "application/json"}
      :body (JSON/stringify (clj->js event))}))
+
+(defgateway hello-get [event ctx]
+  (let [name (get-in event [:query :name])]
+    {:status 200
+     :headers {:content-type "application/json"}
+     :body (JSON/stringify (clj->js (client/get "https://shields.redsparr0w.com/2473/monday" {:accept :json})))}))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;

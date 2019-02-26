@@ -41,6 +41,12 @@ functions:
       - http:
           path: hello-inspect-post
           method: post
+  hello-get:
+    cljs: lambda-helper.core/hello-get
+    events:
+      - http:
+          path: hello-get
+          method: get
 
 plugins:
   - serverless-cljs-plugin
