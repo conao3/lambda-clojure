@@ -11,3 +11,4 @@ pom.xml
 .lein*
 /node_modules
 .serverless/
+figwheel_server.log
