@@ -1,14 +1,15 @@
 (ns lambda-clojure.core
+  (:require [clojure.data.json :as json])
   (:gen-class))
 
-(defn simple-lambda [event]
+(defn hello [event]
   {'statusCode 200
    'headers {'content-type (-> event :headers :content-type)}
    'body "hello world"
    })
 
-(defn simple-lambda-body [event]
+(defn hello-json [event]
   {'statusCode 200
    'headers {'content-type (-> event :headers :content-type)}
-   'body (JSON/stringify {'message "hello world"})
+   'body (json/write-str {'message "hello world"})
    })
