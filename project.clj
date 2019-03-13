@@ -1,4 +1,4 @@
-(defproject lambda-clojure "0.1.0"
+(defproject conao3/lambda-clojure "0.1.0"
   :description "FIXME: write description"
   :url "http://example.com/FIXME"
   :min-lein-version "2.0.0"
@@ -11,13 +11,13 @@
                  [ring-apigw-lambda-proxy "0.3.0"]]
   :plugins [[lein-ring "0.9.7"]
             [lein-lambda "0.2.0"]]
-  :ring {:handler lambda-clojure.handler/app}
+  :ring {:handler conao3.lambda-clojure.handler/app}
   :profiles
   {:dev {:dependencies [[javax.servlet/servlet-api "2.5"]
                         [ring/ring-mock "0.3.1"]]}
    :uberjar {:aot :all}}
   :lambda {:function {:name "lambda-clojure"
-                      :handler "lambda-clojure.lambda.LambdaFn"
+                      :handler "conao3.lambda-clojure.lambda.LambdaFn"
                       :role "minimum-lambda-execution-role"}
            :api-gateway {:name "lambda-clojure"}
            :stages {"stable" {:warmup {:enable true}}
