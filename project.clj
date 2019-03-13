@@ -1,11 +1,23 @@
-(defproject lambda-clojure "0.1.0"
-  :description "conao's helper API working on AWS Lambda"
-  :url "http://github.com/conao3/lambda-clojure"
-  :license {:name "AGPLv3"
-            :url "https://www.gnu.org/licenses/agpl-3.0.html"}
-  :dependencies [[org.clojure/clojure "1.9.0"]
-                 [org.clojure/data.json "0.2.6"]
-                 [com.amazonaws/aws-lambda-java-core "1.0.0"]]
-  :repl-options {:init-ns lambda-clojure.core}
-  :java-source-paths ["src/java"]
-  :aot :all)
+(defproject lambda-clojure "0.1.0-SNAPSHOT"
+  :description "FIXME: write description"
+  :url "http://example.com/FIXME"
+  :min-lein-version "2.0.0"
+  :dependencies [[org.clojure/clojure "1.8.0"]
+                 [compojure "1.6.0"]
+                 [ring/ring-defaults "0.3.1"]
+                 [ring/ring-json "0.4.0"]
+                 [uswitch/lambada "0.1.2"]
+                 [cheshire "5.7.1"]
+                 [ring-apigw-lambda-proxy "0.3.0"]]
+  :plugins [[lein-ring "0.9.7"]
+            [lein-lambda "0.2.0"]]
+  :ring {:handler lambda-clojure.handler/app}
+  :profiles
+  {:dev {:dependencies [[javax.servlet/servlet-api "2.5"]
+                        [ring/ring-mock "0.3.1"]]}
+   :uberjar {:aot :all}}
+  :lambda {:function {:name "lambda-clojure"
+                      :handler "lambda-clojure.lambda.LambdaFn"}
+           :api-gateway {:name "lambda-clojure"}
+           :stages {"production" {:warmup {:enable true}}
+                    "staging"    {}}})
