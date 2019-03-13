@@ -20,5 +20,5 @@
                       :handler "lambda-clojure.lambda.LambdaFn"
                       :role "minimum-lambda-execution-role"}
            :api-gateway {:name "lambda-clojure"}
-           :stages {"production" {:warmup {:enable true}}
+           :stages {"stable" {:warmup {:enable true}}
                     "dev" {}}})
