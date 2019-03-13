@@ -1,3 +1,4 @@
+.PHONY: all stable test
 
 all:
 	lein lambda deploy dev
