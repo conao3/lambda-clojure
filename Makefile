@@ -4,3 +4,6 @@ all:
 
 stable:
 	lein lambda deploy stable
+
+test:
+	lein test
