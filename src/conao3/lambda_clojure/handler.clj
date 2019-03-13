@@ -8,15 +8,15 @@
 
 (defroutes app-routes
   (GET "/hello" []
-    (response {:message "Hello World"}))
+       (response {:message "Hello World"}))
 
   (GET "/hellofn" []
        (lc-core/hellofn))
 
   (route/not-found
-    (response/not-found {:message "Not Found"})))
+   (response/not-found {:message "Not Found"})))
 
 (def app
   (-> app-routes
-    (wrap-json-response)
-    (wrap-defaults api-defaults)))
+      (wrap-json-response)
+      (wrap-defaults api-defaults)))
