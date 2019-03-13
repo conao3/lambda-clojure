@@ -1,4 +1,4 @@
-(defproject lambda-clojure "0.1.0-SNAPSHOT"
+(defproject lambda-clojure "0.1.0"
   :description "FIXME: write description"
   :url "http://example.com/FIXME"
   :min-lein-version "2.0.0"
@@ -17,7 +17,8 @@
                         [ring/ring-mock "0.3.1"]]}
    :uberjar {:aot :all}}
   :lambda {:function {:name "lambda-clojure"
-                      :handler "lambda-clojure.lambda.LambdaFn"}
+                      :handler "lambda-clojure.lambda.LambdaFn"
+                      :role "minimum-lambda-execution-role"}
            :api-gateway {:name "lambda-clojure"}
            :stages {"production" {:warmup {:enable true}}
-                    "staging"    {}}})
+                    "dev" {}}})
