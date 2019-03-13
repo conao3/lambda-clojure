@@ -1,7 +1,7 @@
-(ns lambda-clojure.handler-test
+(ns conao3.lambda-clojure.handler-test
   (:require [clojure.test :refer :all]
             [ring.mock.request :as mock]
-            [lambda-clojure.handler :refer :all]))
+            [conao3.lambda-clojure.handler :refer :all]))
 
 (deftest test-app
   (testing "main route"
