@@ -8,6 +8,7 @@
             [conao3.lambda-clojure.hello :refer [hello-routes]]))
 
 (defroutes app-routes
+  core-routes
   hello-routes
   (route/not-found (response/not-found {:message "Not Found"})))
 
