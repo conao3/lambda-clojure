@@ -4,12 +4,8 @@
 (defn hello-fn []
   (response {:message "Hello Function"}))
 
-(defn hello-args ;; [name role & rest]
-  [req]
-  (response {;; :name name
-             ;; :role role
-             :x x
-             :rest (print-str req)}))
+(defn hello-args [req]
+  (response {:rest (print-str req)}))
 
 
 
