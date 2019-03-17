@@ -6,13 +6,3 @@
 
 (defn hello-args [req]
   (response {:rest (print-str req)}))
-
-
-
-
-
-
-
-
-
-
