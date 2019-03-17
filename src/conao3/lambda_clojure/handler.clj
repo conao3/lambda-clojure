@@ -7,10 +7,10 @@
             [conao3.lambda-clojure.core :as lc-core]))
 
 (defroutes app-routes
-  (GET "/" req (response {:apis "hello" "hello-fn" "hello-args/:name"}))
-  (GET "/hello" req (response {:message "Hello World"}))
-  (GET "/hello-fn" req (lc-core/hello-fn))
-  (GET "/hello-args/:name" req (lc-core/hello-args req))
+  (GET "/" _ (response {:apis (print-str ["hello" "hello-fn" "hello-args/:name"])}))
+  (GET "/hello" _ (response {:message "Hello World"}))
+  (GET "/hello-fn" _ lc-core/hello-fn)
+  (GET "/hello-args/:name" _ lc-core/hello-args)
   (route/not-found (response/not-found {:message "Not Found"})))
 
 (def app
