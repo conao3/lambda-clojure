@@ -8,7 +8,8 @@
                  [ring/ring-json "0.4.0"]
                  [uswitch/lambada "0.1.2"]
                  [cheshire "5.7.1"]
-                 [ring-apigw-lambda-proxy "0.3.0"]]
+                 [ring-apigw-lambda-proxy "0.3.0"]
+                 [dali "0.7.4"]]
   :plugins [[lein-ring "0.9.7"]
             [lein-lambda "0.2.0"]]
   :ring {:handler conao3.lambda-clojure.handler/app}
