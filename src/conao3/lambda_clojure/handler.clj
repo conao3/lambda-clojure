@@ -4,7 +4,8 @@
             [ring.middleware.defaults :refer [wrap-defaults api-defaults]]
             [ring.util.response :as response :refer [response]]
             [ring.middleware.json :refer [wrap-json-response]]
-            [conao3.lambda-clojure.core :refer [hello-routes]]))
+            [conao3.lambda-clojure.core :refer [core-routes]]
+            [conao3.lambda-clojure.hello :refer [hello-routes]]))
 
 (defroutes app-routes
   hello-routes
