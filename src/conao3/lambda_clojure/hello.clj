@@ -34,7 +34,7 @@
   (io/render-png document "/tmp/hello-world.png")
   (-> (slurp "/tmp/hello-world.png")
       (response)
-      (response/content-type "image/png")))
+      (response/content-type "image/png;base64")))
 
 (defroutes hello-routes
   (context "/hello" _
